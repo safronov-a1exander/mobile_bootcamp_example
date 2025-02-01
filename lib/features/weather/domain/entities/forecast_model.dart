@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:mobile_bootcamp_done/features/weather/domain/entities/forecast_day_model.dart';
+import 'package:mobile_bootcamp_example/features/weather/domain/entities/forecast_day_model.dart';
 
 part 'forecast_model.freezed.dart';
 

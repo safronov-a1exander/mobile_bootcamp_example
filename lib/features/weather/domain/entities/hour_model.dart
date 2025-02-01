@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:mobile_bootcamp_done/features/weather/domain/entities/condition_model.dart';
+import 'package:mobile_bootcamp_example/features/weather/domain/entities/condition_model.dart';
 
 part 'hour_model.freezed.dart';
 

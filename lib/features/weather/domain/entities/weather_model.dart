@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:mobile_bootcamp_done/features/weather/domain/entities/location_model.dart';
-import 'package:mobile_bootcamp_done/features/weather/domain/entities/current_model.dart';
-import 'package:mobile_bootcamp_done/features/weather/domain/entities/forecast_model.dart';
+import 'package:mobile_bootcamp_example/features/weather/domain/entities/current_model.dart';
+import 'package:mobile_bootcamp_example/features/weather/domain/entities/forecast_model.dart';
+import 'package:mobile_bootcamp_example/features/weather/domain/entities/location_model.dart';
 
 part 'weather_model.freezed.dart';
 
