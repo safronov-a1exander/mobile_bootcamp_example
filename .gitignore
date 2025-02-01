@@ -43,3 +43,15 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Code generation related
+*.g.dart
+*.gr.dart
+*.freezed.dart
+*.mocks.dart
+
+# FVM related
+.fvm/
+
+# Secrets
+.env
