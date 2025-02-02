@@ -8,7 +8,7 @@ import 'package:mobile_bootcamp_example/features/weather/domain/entities/hour_mo
 import 'package:mobile_bootcamp_example/features/weather/domain/entities/location_model.dart';
 import 'package:mobile_bootcamp_example/features/weather/domain/entities/weather_model.dart';
 
-final WeatherModel weather = WeatherModel(
+const WeatherModel mockWeatherModel = WeatherModel(
     location: LocationModel(
       name: "London",
       region: "City of London, Greater London",
