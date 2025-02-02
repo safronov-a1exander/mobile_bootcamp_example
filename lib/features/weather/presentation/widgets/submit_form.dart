@@ -1,4 +1,3 @@
-                   
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -22,7 +21,7 @@ class _SubmitFormState extends State<SubmitForm> {
   void _submit() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-       Navigator.pushReplacementNamed(context, '/weather');
+      Navigator.pushReplacementNamed(context, '/weather');
       _controller.clear();
     }
   }
@@ -47,9 +46,7 @@ class _SubmitFormState extends State<SubmitForm> {
                   }
                   return null;
                 },
-                onSaved: (value) {
-
-                },
+                onSaved: (value) {},
               ),
             ),
             const SizedBox(width: 10),
