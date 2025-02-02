@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile_bootcamp_example/common/api_client.dart/format_date.dart';
+import 'package:mobile_bootcamp_example/common/format_date.dart';
 import 'package:mobile_bootcamp_example/features/weather/domain/entities/hour_model.dart';
 import 'package:mobile_bootcamp_example/features/weather/presentation/widgets/small_info_widget.dart';
 import 'package:mobile_bootcamp_example/uikit/theme/app_colors.dart';

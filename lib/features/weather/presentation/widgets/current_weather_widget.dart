@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile_bootcamp_example/common/api_client.dart/format_date.dart';
+import 'package:mobile_bootcamp_example/common/format_date.dart';
 import 'package:mobile_bootcamp_example/features/weather/domain/entities/weather_model.dart';
 import 'package:mobile_bootcamp_example/uikit/theme/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
