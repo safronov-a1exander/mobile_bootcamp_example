@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:mobile_bootcamp_example/features/weather/domain/entities/city_model.dart';
+import 'package:mobile_bootcamp_example/features/weather/presentation/bloc/city/city_bloc.dart';
 
 class SubmitForm extends StatefulWidget {
   const SubmitForm({super.key});
@@ -21,7 +24,7 @@ class _SubmitFormState extends State<SubmitForm> {
   void _submit() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      Navigator.pushReplacementNamed(context, '/weather');
+      context.read<CityBloc>().add(CityEvent.getCity());
       _controller.clear();
     }
   }
@@ -46,7 +49,11 @@ class _SubmitFormState extends State<SubmitForm> {
                   }
                   return null;
                 },
-                onSaved: (value) {},
+                onSaved: (value) {
+                  context
+                      .read<CityBloc>()
+                      .add(CityEvent.setCity(CityModel(cityName: value ?? '')));
+                },
               ),
             ),
             const SizedBox(width: 10),
