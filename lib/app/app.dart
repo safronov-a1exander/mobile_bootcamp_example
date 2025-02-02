@@ -24,47 +24,50 @@ class WeatherApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
+      providers: [
+        RepositoryProvider<IWeatherRepository>(
+          create: (context) => WeatherRepository(
+            weatherDataSource: WeathertDataSource(client: _apiClient),
+          ),
+        ),
+        RepositoryProvider<ICityRepository>(
+          create: (context) => CityRepository(
+            cityDataSource:
+                LocalCityDataSource(storage: SharedPreferencesAsync()),
+          ),
+        ),
+      ],
+      child: MultiBlocProvider(
         providers: [
-          RepositoryProvider<IWeatherRepository>(
-            create: (context) => WeatherRepository(
-                weatherDataSource: WeathertDataSource(client: _apiClient)),
+          BlocProvider(
+            create: (context) =>
+                CityBloc(cityRepository: context.read<ICityRepository>()),
           ),
-          RepositoryProvider<ICityRepository>(
-            create: (context) => CityRepository(
-                cityDataSource:
-                    LocalCityDataSource(storage: SharedPreferencesAsync())),
+          BlocProvider(
+            create: (context) => WeatherBloc(
+              weatherRepository: context.read<IWeatherRepository>(),
+            ),
           ),
         ],
-        child: MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (context) =>
-                  CityBloc(cityRepository: context.read<ICityRepository>()),
-            ),
-            BlocProvider(
-              create: (context) => WeatherBloc(
-                  weatherRepository: context.read<IWeatherRepository>()),
-            ),
+        child: MaterialApp(
+          title: 'Mobile-bootcamp-weather-app',
+          theme: theme,
+          localizationsDelegates: [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
           ],
-          child: MaterialApp(
-        title: 'Mobile-bootcamp-weather-app',
-        theme: theme,
-        localizationsDelegates: [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: [
-          Locale('en'),
-          Locale('ru'),
-        ],
-        routes: {
+          supportedLocales: [
+            Locale('en'),
+            Locale('ru'),
+          ],
+          routes: {
             '/': (context) => const LocationScreen(),
-            '/weather': (context) =>  WeatherScreen(
-                ),
+            '/weather': (context) => WeatherScreen(),
           },
         ),
-    ));
+      ),
+    );
   }
 }

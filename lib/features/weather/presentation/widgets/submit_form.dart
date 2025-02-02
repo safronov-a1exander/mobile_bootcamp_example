@@ -32,36 +32,37 @@ class _SubmitFormState extends State<SubmitForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
-        key: _formKey,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Expanded(
-              child: TextFormField(
-                controller: _controller,
-                decoration: InputDecoration(
-                  hintText: AppLocalizations.of(context)!.enterCity,
-                  border: OutlineInputBorder(),
-                ),
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return AppLocalizations.of(context)!.pleaseEnterCity;
-                  }
-                  return null;
-                },
-                onSaved: (value) {
-                  context
-                      .read<CityBloc>()
-                      .add(CityEvent.setCity(CityModel(cityName: value ?? '')));
-                },
+      key: _formKey,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: TextFormField(
+              controller: _controller,
+              decoration: InputDecoration(
+                hintText: AppLocalizations.of(context)!.enterCity,
+                border: OutlineInputBorder(),
               ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return AppLocalizations.of(context)!.pleaseEnterCity;
+                }
+                return null;
+              },
+              onSaved: (value) {
+                context
+                    .read<CityBloc>()
+                    .add(CityEvent.setCity(CityModel(cityName: value ?? '')));
+              },
             ),
-            const SizedBox(width: 10),
-            ElevatedButton(
-              onPressed: _submit,
-              child: Text(AppLocalizations.of(context)!.submit),
-            ),
-          ],
-        ));
+          ),
+          const SizedBox(width: 10),
+          ElevatedButton(
+            onPressed: _submit,
+            child: Text(AppLocalizations.of(context)!.submit),
+          ),
+        ],
+      ),
+    );
   }
 }

@@ -21,25 +21,27 @@ class LocationScreen extends StatelessWidget {
         child: Center(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(children: [
-              Spacer(),
-              Image.asset(AppImages.weatherIcon),
-              SizedBox(
-                height: 30,
-              ),
-              BlocListener<CityBloc, CityState>(
-                listener: (context, state) {
-                  if (state is CitySuccessState) {
-                    context
-                        .read<WeatherBloc>()
-                        .add(WeatherEvent.getForecast(state.city));
-                    Navigator.pushReplacementNamed(context, '/weather');
-                  }
-                },
-                child: SubmitForm(),
-              ),
-              Spacer(),
-            ]),
+            child: Column(
+              children: [
+                Spacer(),
+                Image.asset(AppImages.weatherIcon),
+                SizedBox(
+                  height: 30,
+                ),
+                BlocListener<CityBloc, CityState>(
+                  listener: (context, state) {
+                    if (state is CitySuccessState) {
+                      context
+                          .read<WeatherBloc>()
+                          .add(WeatherEvent.getForecast(state.city));
+                      Navigator.pushReplacementNamed(context, '/weather');
+                    }
+                  },
+                  child: SubmitForm(),
+                ),
+                Spacer(),
+              ],
+            ),
           ),
         ),
       ),

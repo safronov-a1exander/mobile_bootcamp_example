@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:mobile_bootcamp_example/uikit/theme/app_colors.dart';
 
 class RowInfoWidget extends StatelessWidget {
-  const RowInfoWidget(
-      {super.key,
-      required this.icon,
-      required this.label,
-      required this.value});
+  const RowInfoWidget({
+    super.key,
+    required this.icon,
+    required this.label,
+    required this.value,
+  });
   final IconData icon;
   final String label;
   final String value;

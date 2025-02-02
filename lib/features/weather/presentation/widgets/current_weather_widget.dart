@@ -24,8 +24,10 @@ class CurrentWeatherWidget extends StatelessWidget {
               ),
               onPressed: () => Navigator.pushReplacementNamed(context, '/'),
             ),
-            Text(weatherModel.location.name,
-                style: Theme.of(context).textTheme.headlineSmall),
+            Text(
+              weatherModel.location.name,
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
             const Icon(Icons.add, color: AppColors.black2),
           ],
         ),
@@ -39,24 +41,30 @@ class CurrentWeatherWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CachedNetworkImage(
-                imageUrl: "https:${weatherModel.current.condition.icon}"),
+              imageUrl: "https:${weatherModel.current.condition.icon}",
+            ),
             Text(
               "${weatherModel.current.tempC}°",
               style: Theme.of(context).textTheme.displayLarge?.copyWith(
-                  fontWeight: FontWeight.w300, color: AppColors.white1),
-            )
+                    fontWeight: FontWeight.w300,
+                    color: AppColors.white1,
+                  ),
+            ),
           ],
         ),
         const SizedBox(height: 4),
         Center(
           child: Text(
-              "${weatherModel.forecast?.forecastDay.first.day.mintempC ?? ''}°/${weatherModel.forecast?.forecastDay.first.day.maxtempC} ${AppLocalizations.of(context)!.feelsLike} ${weatherModel.current.feelslikeC}°",
-              style: Theme.of(context).textTheme.bodyMedium),
+            "${weatherModel.forecast?.forecastDay.first.day.mintempC ?? ''}°/${weatherModel.forecast?.forecastDay.first.day.maxtempC} ${AppLocalizations.of(context)!.feelsLike} ${weatherModel.current.feelslikeC}°",
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
         ),
         const SizedBox(height: 4),
         Center(
-          child: Text(weatherModel.current.condition.text,
-              style: Theme.of(context).textTheme.bodyMedium),
+          child: Text(
+            weatherModel.current.condition.text,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
         ),
         const SizedBox(height: 20),
         Text(

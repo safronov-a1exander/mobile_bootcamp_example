@@ -14,9 +14,11 @@ void runWeatherApp() async {
     final Dio dio = Dio();
     dio.interceptors.add(WeatherApiInterceptor());
     final ApiClient apiClient = ApiClient(dio, baseUrl: Env.baseurl);
-    runApp(WeatherApp(
-      apiClient: apiClient,
-    ));
+    runApp(
+      WeatherApp(
+        apiClient: apiClient,
+      ),
+    );
   }, (exception, stackTrace) async {
     log(exception.toString() + stackTrace.toString());
   });

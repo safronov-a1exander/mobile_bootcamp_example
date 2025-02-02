@@ -9,10 +9,14 @@ abstract class ApiClient {
   factory ApiClient(Dio dio, {String baseUrl}) = _ApiClient;
 
   @POST("current.json")
-  Future<WeatherDTO> getCurrent(@Query("q") String cityName,
-      {@Header('Content-Type') String contentType = 'application/json'});
+  Future<WeatherDTO> getCurrent(
+    @Query("q") String cityName, {
+    @Header('Content-Type') String contentType = 'application/json',
+  });
 
   @POST("forecast.json")
-  Future<WeatherDTO> getForecast(@Query("q") String cityName,
-      {@Header('Content-Type') String contentType = 'application/json'});
+  Future<WeatherDTO> getForecast(
+    @Query("q") String cityName, {
+    @Header('Content-Type') String contentType = 'application/json',
+  });
 }

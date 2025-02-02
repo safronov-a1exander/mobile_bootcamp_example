@@ -11,26 +11,30 @@ class WeatherByTimeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 120,
-        child: DecoratedBox(
-            decoration: BoxDecoration(
-              color: AppColors.blueWithOpacity,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: ListView.builder(
-                    physics: AlwaysScrollableScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    itemCount: hours.length,
-                    itemBuilder: (context, index) {
-                      final hour = hours[index];
-                      return SmallInfoWidget(
-                        label: formatTimeToHour(dateTime: hour.time),
-                        icon: "https:${hour.condition.icon}",
-                        subtitle1: "${hour.humidity.toString()}%",
-                        subtitle2: "${hour.tempC}C",
-                      );
-                    }))));
+      height: 120,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: AppColors.blueWithOpacity,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: ListView.builder(
+            physics: AlwaysScrollableScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            itemCount: hours.length,
+            itemBuilder: (context, index) {
+              final hour = hours[index];
+              return SmallInfoWidget(
+                label: formatTimeToHour(dateTime: hour.time),
+                icon: "https:${hour.condition.icon}",
+                subtitle1: "${hour.humidity.toString()}%",
+                subtitle2: "${hour.tempC}C",
+              );
+            },
+          ),
+        ),
+      ),
+    );
   }
 }

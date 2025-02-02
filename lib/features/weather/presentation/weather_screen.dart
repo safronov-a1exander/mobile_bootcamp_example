@@ -56,8 +56,8 @@ class WeatherScreen extends StatelessWidget {
                       children: [
                         CurrentWeatherWidget(weatherModel: state.weather),
                         WeatherByTimeWidget(
-                            hours:
-                                state.weather.forecast!.forecastDay.first.hour),
+                          hours: state.weather.forecast!.forecastDay.first.hour,
+                        ),
                         WeatherByDaysWidget(
                           days: state.weather.forecast!.forecastDay,
                         ),

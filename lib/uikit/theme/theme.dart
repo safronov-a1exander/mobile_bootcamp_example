@@ -4,29 +4,33 @@ import 'package:mobile_bootcamp_example/uikit/theme/app_colors.dart';
 
 const textTheme = TextTheme(
   headlineSmall: TextStyle(
-      fontFamily: FontFamily.inter,
-      fontWeight: FontWeight.bold,
-      fontSize: 18,
-      height: 1.5,
-      color: AppColors.white1),
+    fontFamily: FontFamily.inter,
+    fontWeight: FontWeight.bold,
+    fontSize: 18,
+    height: 1.5,
+    color: AppColors.white1,
+  ),
   bodySmall: TextStyle(
-      fontFamily: FontFamily.inter,
-      fontWeight: FontWeight.w500,
-      fontSize: 12,
-      height: 1.5,
-      color: AppColors.white1),
+    fontFamily: FontFamily.inter,
+    fontWeight: FontWeight.w500,
+    fontSize: 12,
+    height: 1.5,
+    color: AppColors.white1,
+  ),
   bodyLarge: TextStyle(
-      fontFamily: FontFamily.inter,
-      fontWeight: FontWeight.w500,
-      fontSize: 16,
-      height: 1.21,
-      color: AppColors.white1),
+    fontFamily: FontFamily.inter,
+    fontWeight: FontWeight.w500,
+    fontSize: 16,
+    height: 1.21,
+    color: AppColors.white1,
+  ),
   bodyMedium: TextStyle(
-      fontFamily: FontFamily.inter,
-      fontWeight: FontWeight.w500,
-      fontSize: 14,
-      height: 1.21,
-      color: AppColors.white1),
+    fontFamily: FontFamily.inter,
+    fontWeight: FontWeight.w500,
+    fontSize: 14,
+    height: 1.21,
+    color: AppColors.white1,
+  ),
   headlineLarge: TextStyle(
     fontFamily: FontFamily.inter,
     fontWeight: FontWeight.w700,
@@ -79,11 +83,12 @@ final ThemeData theme = ThemeData(
   appBarTheme: const AppBarTheme(backgroundColor: AppColors.blue),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: TextButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
-        backgroundColor: AppColors.white1,
-        shadowColor: AppColors.black2),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      backgroundColor: AppColors.white1,
+      shadowColor: AppColors.black2,
+    ),
   ),
   listTileTheme: ListTileThemeData(
     tileColor: AppColors.white2,

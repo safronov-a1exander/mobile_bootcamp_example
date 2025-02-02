@@ -2,12 +2,13 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class SmallInfoWidget extends StatelessWidget {
-  const SmallInfoWidget(
-      {super.key,
-      required this.label,
-      required this.icon,
-      required this.subtitle1,
-      required this.subtitle2});
+  const SmallInfoWidget({
+    super.key,
+    required this.label,
+    required this.icon,
+    required this.subtitle1,
+    required this.subtitle2,
+  });
   final String label;
   final String icon;
   final String subtitle1;

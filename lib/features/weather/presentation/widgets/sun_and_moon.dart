@@ -38,9 +38,10 @@ class SunAndMoonWidget extends StatelessWidget {
               value: astroModel.moonrise,
             ),
             RowInfoWidget(
-                icon: Icons.nightlight,
-                label: AppLocalizations.of(context)!.windDirection,
-                value: astroModel.moonset),
+              icon: Icons.nightlight,
+              label: AppLocalizations.of(context)!.windDirection,
+              value: astroModel.moonset,
+            ),
           ],
         ),
       ),

@@ -11,26 +11,30 @@ class WeatherByDaysWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        height: 120,
-        child: DecoratedBox(
-            decoration: BoxDecoration(
-              color: AppColors.blueWithOpacity,
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Padding(
-                padding: const EdgeInsets.all(8),
-                child: ListView.builder(
-                    physics: AlwaysScrollableScrollPhysics(),
-                    scrollDirection: Axis.horizontal,
-                    itemCount: days.length,
-                    itemBuilder: (context, index) {
-                      final day = days[index];
-                      return SmallInfoWidget(
-                        label: formatDateToDayOfWeek(date: day.date),
-                        icon: "https:${day.day.condition.icon}",
-                        subtitle1: day.day.condition.text,
-                        subtitle2: "${day.day.mintempC}°/${day.day.maxtempC}°",
-                      );
-                    }))));
+      height: 120,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          color: AppColors.blueWithOpacity,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: ListView.builder(
+            physics: AlwaysScrollableScrollPhysics(),
+            scrollDirection: Axis.horizontal,
+            itemCount: days.length,
+            itemBuilder: (context, index) {
+              final day = days[index];
+              return SmallInfoWidget(
+                label: formatDateToDayOfWeek(date: day.date),
+                icon: "https:${day.day.condition.icon}",
+                subtitle1: day.day.condition.text,
+                subtitle2: "${day.day.mintempC}°/${day.day.maxtempC}°",
+              );
+            },
+          ),
+        ),
+      ),
+    );
   }
 }
