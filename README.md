@@ -1,16 +1,41 @@
-# mobile_bootcamp_example
+# Mobile Bootcamp 2025
 
-A new Flutter project.
+Репозиторий буткемпа мобильной и кроссплатформенной разработки **Студенческой ИТ-лаборатории** по направлению "Flutter"
 
-## Getting Started
+## Структура репозитория
 
-This project is a starting point for a Flutter application.
+В репозитории находятся 3 ветки:
 
-A few resources to get you started if this is your first Flutter project:
+- main, где лежит **стартовый** проект с нашей предлагаемой структурой проекта,
+- performance, где находится результат нашей работы за первый день (верстка экранов),
+- done, с **полностью готовым** проектом, который на буткемпе был собран под Android (и даже Windows).
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Запуск проекта
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Инструкция
+
+- скачать репозиторий,
+- установить Flutter SDK и [необходимые программы для запуска на вашей платформе](https://docs.flutter.dev/get-started/install/),
+- установить все зависимости командой flutter pub get,
+- заполнить .env файл с переменными окружения,
+- с помощью кодогенерации создать все недостающие файлы командой dart run build_runner build --delete-conflicting-outputs,
+- запустить проект с помощью команды flutter run или через инструменты вашей IDE.
+
+### Описание файла .env
+
+Файл с названием .env должен лежать **в корне проекта** и иметь две строчки:
+
+```
+BASE_URL=
+API_KEY=
+```
+
+где после = должны быть указаны ссылка на API (в нашем случае это https://api.weatherapi.com/v1/) и ключ (его вы можете получить при регистрации на сайте WeatherAPI).
+
+**При изменении параметров** внутри этого файла **необходимо** удалить файл env.g.dart и выполнить команду flutter clean, чтобы впоследствии при генерации файл env.g.dart сгенерировался с новыми данными
+
+### Важно
+
+**Локализация** в проекте генерируется и не всегда подтягивается проектом, поэтому после build_runner выполняйте flutter pub get **еще раз**. Также, если вы захотите создать новые файлы и использовать локализацию в них, вам придется добавлять в них импорт сгенерированной локализации **самостоятельно**.
+
+При установке последней на момент буткемпа версии Flutter и запуске приложения под Android возникала **ошибка AGP**, для ее решения прочитайте вывод в консоли: необходимо изменить версию Gradle на указанную.
